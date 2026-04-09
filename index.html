@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Códigos QR</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔴</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <h1>🔴 Generador QR</h1>
+        
+        <div class="input-group">
+            <label for="qrInput">Ingresa el texto o URL:</label>
+            <input 
+                type="text" 
+                id="qrInput" 
+                placeholder="Ej: https://ejemplo.com o Tu texto aquí"
+                autocomplete="off"
+            >
+            <div class="error" id="errorMsg"></div>
+        </div>
+
+        <div class="input-group">
+            <label for="logoInput">Imagen del logo (opcional):</label>
+            <input 
+                type="text" 
+                id="logoInput" 
+                placeholder="URL de tu imagen: https://imgur.com/tu-imagen.png"
+                autocomplete="off"
+            >
+            <small>💡 Puedes subir tu imagen en <a href="https://imgur.com" target="_blank">Imgur</a> (es gratis) y pegar el enlace aquí</small>
+        </div>
+        
+        <div class="input-group">
+            <label>Personalización:</label>
+            <div class="color-options">
+                <div>
+                    <label for="colorDark">Color oscuro:</label>
+                    <input type="color" id="colorDark" value="#000000">
+                </div>
+                <div>
+                    <label for="colorLight">Color claro:</label>
+                    <input type="color" id="colorLight" value="#ffffff">
+                </div>
+            </div>
+        </div>
+        
+        <div class="qr-display">
+            <div id="qrCode"></div>
+        </div>
+        
+        <div class="button-group">
+            <button class="btn-generate" onclick="generarQR()">Generar QR</button>
+            <button class="btn-download" id="btnDescargar" onclick="descargarQR()" disabled>Descargar</button>
+            <button class="btn-clear" id="btnLimpiar" onclick="limpiar()" disabled>Limpiar</button>
+        </div>
+        
+        <div class="info">
+            💡 <strong>Consejo:</strong> Ingresa una URL o cualquier texto, luego haz clic en "Generar QR". Puedes descargar el código como imagen PNG.
+        </div>
+        
+        <div class="footer">
+            📂 <strong>Código fuente:</strong> <code>c:\Users\jfveram\Downloads\QR\index.html</code>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
